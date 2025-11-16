@@ -9,7 +9,7 @@ dependencies {
 ### With this configuration in input, node will be accessible from http://localhost:8080
 ### (Once ingress and nginx has been configured to route to appropriate services)
 
-inputs {
+inputs =  {
   cluster_name = "book-system-cluster"
   cluster_host_port = 8080
   cluster_port = 80
