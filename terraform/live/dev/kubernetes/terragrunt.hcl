@@ -2,10 +2,6 @@ terraform {
   source = "../../../modules/kubernetes"
 }
 
-dependencies {
-  paths = [] ## No dependencies, core modules
-}
-
 ### With this configuration in input, node will be accessible from http://localhost:8080
 ### (Once ingress and nginx has been configured to route to appropriate services)
 
