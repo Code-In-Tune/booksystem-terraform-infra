@@ -1,5 +1,5 @@
 terraform {
-  source = "../../../modules/nginx"
+  source = "../../../modules/grafana"
 }
 
 include "root" {
@@ -8,18 +8,17 @@ include "root" {
 }
 
 dependencies {
-  paths = ["../namespace", "../kubernetes"]
+  paths = ["../namespace", "../kubernetes", "../nginx"]
 }
-
 
 inputs = {
   app_namespace_name = include.root.locals.app_namespace_name
   observability_namespace_name = include.root.locals.observability_namespace_name
   auth_namespace_name = include.root.locals.auth_namespace_name
   infra_namespace_name = include.root.locals.infra_namespace_name
-  nginx_name = include.root.locals.nginx_name
-  nginx_repository= include.root.locals.nginx_repository
-  nginx_chart = include.root.locals.nginx_chart
-  nginx_version = include.root.locals.nginx_version
-  nginx_controller_host_port_ports_http = include.root.locals.nginx_controller_host_port_ports_http
+  grafana_root_url = include.root.locals.grafana_root_url
+  grafana_name = include.root.locals.grafana_name
+  grafana_repository = include.root.locals.grafana_repository
+  grafana_chart = include.root.locals.grafana_chart
+  grafana_version = include.root.locals.grafana_version
 }

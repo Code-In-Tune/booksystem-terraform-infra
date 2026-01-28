@@ -7,11 +7,6 @@ include "root" {
   expose = true
 }
 
-dependency "kubernetes" {
-  config_path = "../kubernetes"
-  skip_outputs = true
-}
-
 dependencies {
   paths = ["../kubernetes"]
 }
