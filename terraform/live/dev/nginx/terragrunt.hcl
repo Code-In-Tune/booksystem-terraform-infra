@@ -1,5 +1,5 @@
 terraform {
-  source = "../../../modules/namespace"
+  source = "../../../modules/nginx"
 }
 
 include "root" {
@@ -13,7 +13,12 @@ dependency "kubernetes" {
 }
 
 dependencies {
-  paths = ["../kubernetes"]
+  paths = ["../namespace", "../kubernetes"]
+}
+
+dependency "namespace" {
+  config_path = "../namespace"
+  skip_outputs = true
 }
 
 inputs = {
@@ -25,4 +30,9 @@ inputs = {
   observability_namespace_name = include.root.locals.observability_namespace_name
   auth_namespace_name = include.root.locals.auth_namespace_name
   infra_namespace_name = include.root.locals.infra_namespace_name
+  nginx_name = include.root.locals.nginx_name
+  nginx_repository= include.root.locals.nginx_repository
+  nginx_chart = include.root.locals.nginx_chart
+  nginx_version = include.root.locals.nginx_version
+  nginx_controller_host_port_ports_http = include.root.locals.nginx_controller_host_port_ports_http
 }
