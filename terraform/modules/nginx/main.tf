@@ -8,7 +8,12 @@ resource "helm_release" "nginx" {
   version          = var.nginx_version
 
   timeout = 600
-  wait    = false
+  wait    = true
+
+  set {
+    name  = "controller.service.type"
+    value = "NodePort"
+  }
 
 
   set {
@@ -20,4 +25,9 @@ resource "helm_release" "nginx" {
       name  = "controller.hostPort.ports.http"
       value = var.nginx_controller_host_port_ports_http
     }
+
+  set {
+    name  = "controller.admissionWebhooks.enabled"
+    value = "false"
+  }
 }

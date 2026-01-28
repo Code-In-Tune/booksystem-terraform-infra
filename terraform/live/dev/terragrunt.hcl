@@ -13,4 +13,10 @@ locals {
   nginx_chart = "ingress-nginx"
   nginx_version = "4.11.2"
   nginx_controller_host_port_ports_http = "80"
+  argocd_admin_password_bcrypt = "$2y$10$ZD6Wipr02l0FipRf0NGu..9y1EWuMDQpjXZvxoK5H6OkHjMR8PF2O" #admin
+  argocd_version = "5.35.0"
+  argocd_name = "argocd"
+  argocd_repository = "https://argoproj.github.io/argo-helm"
+  argocd_chart = "argo-cd"
+  argocd_path = "/argocd"
 }
