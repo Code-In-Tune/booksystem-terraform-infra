@@ -1,11 +1,11 @@
 terraform {
 
-  required_version = ">= 1.5.0"
+  required_version = ">= 1.4.4"
 
   required_providers {
     kind = {
       source  = "tehcyx/kind"
-      version = "0.10.0"
+      version = "0.5.1"
     }
     kubernetes = {
       source  = "hashicorp/kubernetes"
@@ -13,7 +13,7 @@ terraform {
     }
     helm = {
       source  = "hashicorp/helm"
-      version = ">= 2.14"
+      version = "2.14"
     }
   }
 }

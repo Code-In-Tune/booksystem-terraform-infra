@@ -22,10 +22,6 @@ dependency "namespace" {
 }
 
 inputs = {
-  # kubernetes_host                   = dependency.kubernetes.outputs.kubernetes_host
-  # kubernetes_client_certificate     = dependency.kubernetes.outputs.kubernetes_client_certificate
-  # kubernetes_client_key             = dependency.kubernetes.outputs.kubernetes_client_key
-  # kubernetes_cluster_ca_certificate = dependency.kubernetes.outputs.kubernetes_cluster_ca_certificate
   app_namespace_name = include.root.locals.app_namespace_name
   observability_namespace_name = include.root.locals.observability_namespace_name
   auth_namespace_name = include.root.locals.auth_namespace_name

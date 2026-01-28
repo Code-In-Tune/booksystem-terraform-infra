@@ -11,15 +11,13 @@ resource "helm_release" "nginx" {
   wait    = false
 
 
-  set = [
-    {
+  set {
       name  = "controller.hostPort.enabled"
       value = "true"
-    },
+  }
 
-    {
+  set  {
       name  = "controller.hostPort.ports.http"
       value = var.nginx_controller_host_port_ports_http
     }
-  ]
 }
