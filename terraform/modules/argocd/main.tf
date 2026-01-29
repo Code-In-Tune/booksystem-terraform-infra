@@ -47,36 +47,3 @@ resource "helm_release" "argocd" {
       value = var.argocd_admin_password_bcrypt
     }
 }
-
-resource "kubernetes_ingress_v1" "infra" {
-  metadata {
-    name      = "nginx"
-    namespace = var.infra_namespace_name
-  }
-
-  spec {
-    ingress_class_name = "nginx"
-
-    rule {
-
-      host = "localhost"
-
-      http {
-        path {
-          path      = var.argocd_path
-          path_type = "Prefix"
-
-          backend {
-            service {
-              name = "argocd-server"
-
-              port {
-                number = 80
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-}

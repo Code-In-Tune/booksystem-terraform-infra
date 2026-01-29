@@ -30,7 +30,6 @@ locals {
   argocd_name = "argocd"
   argocd_repository = "https://argoproj.github.io/argo-helm"
   argocd_chart = "argo-cd"
-  argocd_path = "/argocd"
 
   ####### Grafana locals #########
 
@@ -46,4 +45,19 @@ locals {
   vault_repository = "https://helm.releases.hashicorp.com"
   vault_chart = "vault"
   vault_version = "0.28.0"
+
+  ####### Keycloak locals #########
+
+  keycloak_name = "keycloak"
+  keycloak_repository = "oci://registry-1.docker.io/bitnamicharts/"
+  keycloak_chart = "keycloak"
+  keycloak_version = "25.2.0"
+
+  ######## Ingress locals #########
+
+  keycloak_path = "/keycloak"
+  vault_path = "/"
+  argocd_path = "/argocd"
+  grafana_path = "/grafana"
+
 }

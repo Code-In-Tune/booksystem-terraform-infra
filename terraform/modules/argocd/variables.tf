@@ -20,7 +20,6 @@ variable "argocd_chart" {
 variable "argocd_repository" {
   type = string
 }
-
 variable "argocd_path" {
   type = string
 }
